@@ -4,7 +4,7 @@ class Stack:
         self.items = []
 
     def is_empty(self):
-        return self.ite  == []
+        return self.items  == []
 
     def push(self, item):
         self.items.append(item)
