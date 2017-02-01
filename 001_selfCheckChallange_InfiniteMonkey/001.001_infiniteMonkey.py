@@ -40,8 +40,8 @@ def runner():
     best = -1
     bestGoal = ''
     timer = 1000000
-    #while True:
-    while i < 9000000:
+    while True:
+    #while i < 9000000:
         a = generateString()
         b = score_2(a)
         best = max(best, len(b))
