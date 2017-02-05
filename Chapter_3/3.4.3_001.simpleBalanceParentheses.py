@@ -16,6 +16,7 @@ def par_checker(symbolString):
                 s.pop()
 
         index = index + 1
+
     if s.is_empty() and balanced:
         return True
     else:
