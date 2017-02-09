@@ -77,3 +77,36 @@ class Task():
 
     def wait_time(self, current_time):
         return current_time - self.timestamp
+
+
+# The main simulation implements the algorithm described above. The print_queue object is 
+# an instance of our exisitng queue ADT. A boolean helper function, new_print_task, decides
+# whether a new printing task has been created. We have again chosen to use the randrange
+# function from the random moudle to return a random integer between 1 and 180. Print tasks
+# arrive once every 180 seconds. By arbitrarily choosing 180 from the range of random integers,
+# we can simulate this random event. The simulation function allows us to set the total time and
+# pages per minute for the printer.
+
+import Queue
+import Printer
+import Task
+
+import random
+
+def simulation(num_seconds, pages_per_minute):
+
+    lab_printer = Printer(pages_per_minute)
+    print_queue = Queue()
+    wait_time = []
+
+    for current_second in range(num_seconds):
+
+        if new_print_task():
+            task = Task(current_second)
+            print_queue.enqueue(task)
+
+        if (not lab_printer.busy()) and (not printer_queue.is_empty()):
+            next_task = print_queue.dequeue()
+            waiting_times.append(next_task.wait_time(current_second))
+            lab_printer.start_next(next_task)
+
