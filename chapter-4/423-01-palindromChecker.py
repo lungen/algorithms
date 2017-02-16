@@ -19,6 +19,20 @@ phrases, but you need to remove the spaces and punctuation before checking. for 
 def palindromChecker(s):
 
     s = str(s)
+    s = s.lower()
+
+    #remove punctation recursive
+    def remove_puncation(string):
+        if len(string) == 1:
+            return string[0]
+        else:
+            if string[0] in "',.;:" or string[0] == ' ':
+                return remove_puncation(string[1:])
+            else:
+                return string[0] + remove_puncation(string[1:])
+    
+    s = remove_puncation(s)
+
 
     if len(s) == 1:
         return True
@@ -28,7 +42,8 @@ def palindromChecker(s):
         else:
             return False
 
-print(palindromChecker('kayak'))
-print(palindromChecker('aibohphobia'))
-print(palindromChecker('aibohphobia'))
+#print(palindromChecker('kayak'))
+#print(palindromChecker('aibohphobia'))
+#print(palindromChecker('aibohphobia'))
 print(palindromChecker('live not on evil'))
+print(palindromChecker('Reviled did I live, said I, as evil I did deliver'))
