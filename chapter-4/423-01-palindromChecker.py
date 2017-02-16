@@ -24,7 +24,10 @@ def palindromChecker(s):
     #remove punctation recursive
     def remove_puncation(string):
         if len(string) == 1:
-            return string[0]
+            if string[0] in "',.;:" or string[0] == ' ':
+                return ''
+            else:
+                return string[0]
         else:
             if string[0] in "',.;:" or string[0] == ' ':
                 return remove_puncation(string[1:])
@@ -46,4 +49,4 @@ def palindromChecker(s):
 #print(palindromChecker('aibohphobia'))
 #print(palindromChecker('aibohphobia'))
 print(palindromChecker('live not on evil'))
-print(palindromChecker('Reviled did I live, said I, as evil I did deliver'))
+print(palindromChecker("Reviled did I live, said I, as evil I did deliver'"))
