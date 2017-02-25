@@ -3,6 +3,7 @@ def r_binarySearch(a_list, item):
         return False
     else:
         midpoint = len(a_list) // 2
+        print("mp: ", a_list[midpoint])
         if a_list[midpoint] == item:
             return True
         else:
@@ -11,6 +12,7 @@ def r_binarySearch(a_list, item):
             else:
                 return r_binarySearch(a_list[midpoint + 1:], item)
 
-lista = [1,2,3,5,8,13,17,21,31]
-print(r_binarySearch(lista, 5))
+#lista = [1,2,3,5,8,13,17,21,31]
+lista = [3,5,6,8,11,12,14,15,17,18]
+print(r_binarySearch(lista, 16))
 
