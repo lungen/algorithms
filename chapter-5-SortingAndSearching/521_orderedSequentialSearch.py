@@ -17,9 +17,7 @@ def ordered_sequential_search(a_list, item):
 
     return found
 
-lista = [1,2,3,5,7]
+
+lista = [1, 2, 3, 5, 7]
 print(ordered_sequential_search(lista, 5))
 print(ordered_sequential_search(lista, 4))
-        
-
-
